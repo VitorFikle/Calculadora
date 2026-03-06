@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Funnel+Display:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Roboto";
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo-calculadora: #333;
+    --util-btn: #444444;
+    --button-hover:#575757;
+    --attention: crimson;
+    --white: #f3f3f3;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.6rem, 2vw, 1rem);
+
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+
+    overflow-y: hidden;
+}
+
+main {
+    background-color: var(--fundo-calculadora);
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 2vw, 1rem);
+
+    width: 90%;
+    max-width: 380px;
+    margin: auto;
+
+    padding: clamp(1rem, 4vw, 2rem);
+    border-radius: clamp(1rem, 3vw, 2rem);
+}
+
+h1{
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+#display {
+    width: 100%;
+    height: 3.5rem;
+    border-radius: clamp(1rem, 2vw, 2rem);
+    border: none;
+    background-color: var(--white);
+
+    text-align: right;
+    font-size: clamp(2rem, 5vw, 3rem);
+    padding: 0 1rem;
+    letter-spacing: 0.01rem;
+    text-overflow: ellipsis;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#display:focus {
+    border: none;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+    gap: clamp(0.6rem, 2vw, 1rem);
+}
+
+.buttons button {
+    min-height: clamp(50px, 10vw, 80px);
+    background-color: var(--white);
+
+    cursor: pointer;
+    border-radius: clamp(1rem, 3vw, 2rem);
+    border: none;
+
+    font-weight: bold;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+    background-color: var(--button-hover);
+    transform: scale(0.97);
+    box-shadow: none;
+}
+
+#equal{
+    grid-column: span 2;
+}
+
+button.util{
+    background-color: var(--util-btn);
+    color: var(--attention);
+    font-weight: bolder;
+}
+
+button.util:hover{
+    background-color: var(--button-hover);
+}
+
+button.opera{
+    background-color: var(--attention);
+    color: var(--white);
+}
+
+button.opera:hover{
+    background-color: var(--white);
+    color: var(--fundo-calculadora);
+}
+
+#equal{
+    color: var(--white);
+}
+
+a {
+    font-size: 21px;
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: purple;
+}
