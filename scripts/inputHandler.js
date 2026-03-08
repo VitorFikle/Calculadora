@@ -1,4 +1,4 @@
-import { adicionarNumero, operadores } from "./script.js"
+import { adicionarNumero, operadores, deleteOne } from "./script.js"
 
 addEventListener("keydown", function (e) { //checa o evento de pressionar teclas
     const tecla = e.key //variável para melhor leitura: é a tecla pressionada
@@ -9,7 +9,10 @@ addEventListener("keydown", function (e) { //checa o evento de pressionar teclas
         return
     }
 
-    //resolver depois para uma função, porque será necessário refatorar o script.js
+    if (tecla == "Backspace"){
+        deleteOne()
+        return
+    }
     
     if (!/[0-9]/.test(tecla) && !operadores.includes(tecla)) {
         console.log(tecla)
@@ -18,4 +21,3 @@ addEventListener("keydown", function (e) { //checa o evento de pressionar teclas
 
     adicionarNumero(tecla) //adiciona a tecla ao array e atualiza o display
 })
-
