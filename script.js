@@ -3,11 +3,19 @@ const visor = document.querySelector("#display")
 //estado da calculadora
 let expressao = []
 let resultadoMostrado = false
-const operadores = ["+", "-", "*", "/", "%", "."]
+export const operadores = ["+", "-", "*", "/", "%", "."] //registra os operadores e
+//exporto para o inputHandler
+
+//------------------------------PARA INPUTHANDLER---------------------------------//
+export function adicionarNumero(num){ //exportando função para o inputHandler
+    expressao.push(num) //adiciona o número no array
+    visor.value = expressao.join("") //atualiza o visor com os números do array
+}
+//------------------------------PARA INPUTHANDLER---------------------------------//
 
 //Selecionar o teclado e criar o evento
 const teclado = document.querySelector(".buttons") //Este é o teclado
-teclado.addEventListener("click", function (e) { //quando clicar num botão do teclado,
+teclado.addEventListener("click", function (e) { //quando clicar num botão da calculadora,
     //a função e...
 
     if (e.target.tagName !== "BUTTON") { return } //se não for botão, retorne
