@@ -7,9 +7,17 @@ export const operadores = ["+", "-", "*", "/", "%", "."] //registra os operadore
 //exporto para o inputHandler
 
 //------------------------------PARA INPUTHANDLER---------------------------------//
-export function adicionarNumero(num){ //exportando função para o inputHandler
-    expressao.push(num) //adiciona o número no array
+//ADICIONAR UM
+export function adicionarNumero(value) { //exportando função para o inputHandler
+    expressao.push(value) //adiciona o número no array
     visor.value = expressao.join("") //atualiza o visor com os números do array
+}
+
+//DELETE ONE
+export function deleteOne() { //função reutilizável 
+    expressao.pop() //apaga o último item da expressao
+    visor.value = expressao.join("") //atualiza visor
+    return
 }
 //------------------------------PARA INPUTHANDLER---------------------------------//
 
@@ -31,8 +39,7 @@ teclado.addEventListener("click", function (e) { //quando clicar num botão da c
 
     //------DELETE--------//
     else if (valor === "deleteOne") { //se o botão for delete...
-        expressao.pop() //apague o último
-        visor.value = expressao.join("") //atualizo o visor
+        deleteOne()
         return
     }
 
